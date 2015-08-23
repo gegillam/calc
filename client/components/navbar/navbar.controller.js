@@ -2,14 +2,19 @@
 
 angular.module('calcApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    },
-  {
-    'title': 'Profile',
-    'link': '/profile'
-  }];
+    $scope.menu = [
+      {
+        'title': 'Index',
+        'link': '/'
+      },
+      {
+        'title': 'Home',
+        'link': '/main'
+      },
+      {
+        'title': 'Profile',
+        'link': '/profile'
+      }];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
