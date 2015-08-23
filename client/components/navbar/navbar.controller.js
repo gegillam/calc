@@ -5,7 +5,11 @@ angular.module('calcApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    },
+  {
+    'title': 'Profile',
+    'link': '/profile'
+  }];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
