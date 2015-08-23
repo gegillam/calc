@@ -17,13 +17,41 @@
       </ul>
     </div>
   </div>
-
   <form class="thing-form">
     <label>Syncs in realtime across clients</label>
     <p class="input-group">
       <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
       <span class="input-group-btn">
         <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+      </span>
+    </p>
+  </form>
+
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <ul ng-repeat="message in myMessages">
+      <li>
+        <button type="button" class="close" ng-click="deleteMessage(message)">&times;
+        </button>
+        <span style='font-weight:bold;'>{{message.user.name}}</span>: {{message.title}} {{message.body}}
+        <ul ng-repeat="child in message.children">
+          <li>
+            {{child}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <form class="message-form">
+    <p class="col-xs-2" style="padding:0px;">
+      <input type="text" class="form-control"
+      placeholder="Enter a title." ng-model="newMessage"/>
+    </p>
+    <p class='input-group col-xs-10'>
+      <input type="text" class="form-control col-xs-6"placeholder="Enter a message." ng-model="newBody"/>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addMessage()">Add New</button>
       </span>
     </p>
   </form>
